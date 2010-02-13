@@ -64,7 +64,7 @@ class Handler(BaseHTTPRequestHandler):
             # spawn editor...
             print "Spawning editor... ", fname
 
-            p = subprocess.Popen(["/usr/bin/emacsclient", "-c", fname], close_fds=True)
+            p = subprocess.Popen(["/usr/bin/gvim", "--nofork", fname], close_fds=True)
 
             # hold connection open until editor finishes
             p.wait()
